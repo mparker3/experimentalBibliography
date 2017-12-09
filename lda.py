@@ -13,6 +13,8 @@ import gensim
 import os
 import sys
 import numpy as np
+import logging
+logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 def parse(path, doc):
     #loadCleanCorpus("35Corpora/CANON.txt")
     #too lengthy for testing
@@ -42,8 +44,8 @@ def topicModel(corpus, query_text):
     newcorpus = corpus
     dictionary = corpora.Dictionary(newcorpus)
     corpus = [dictionary.doc2bow(doc) for doc in corpus]
-    lda = gensim.models.ldamulticore.LdaMulticore
-    ldamodel = lda(corpus=corpus, num_topics=3, id2word = dictionary, workers=2, passes=50) 
+    lda = gensim.models.ldamodel.LdaModel
+    ldamodel = lda(corpus=corpus, num_topics=5, id2word = dictionary,passes=100) 
     
     query_text_bow = dictionary.doc2bow(query_text)
     query_text_lda = ldamodel[query_text_bow]
