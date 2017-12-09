@@ -1,0 +1,1 @@
+This is a command-line python script for English 035 that performs latent Dirichlet allocation over a directory corpus of .txt files (first argument) and then outputs the most probable topic of a query text (second argument). 
