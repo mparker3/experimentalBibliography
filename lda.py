@@ -45,7 +45,7 @@ def topicModel(corpus, query_text):
     dictionary = corpora.Dictionary(newcorpus)
     corpus = [dictionary.doc2bow(doc) for doc in corpus]
     lda = gensim.models.ldamodel.LdaModel
-    ldamodel = lda(corpus=corpus, num_topics=5, id2word = dictionary,passes=100) 
+    ldamodel = lda(corpus=corpus, num_topics=50, id2word = dictionary,passes=200) 
     
     query_text_bow = dictionary.doc2bow(query_text)
     query_text_lda = ldamodel[query_text_bow]
