@@ -1,1 +1,3 @@
 This is a command-line python script for English 035 that performs latent Dirichlet allocation over a directory corpus of .txt files (first argument) and then outputs the most probable topic of a query text (second argument). 
+
+To use, activate the virtual environment with `source rise-env/bin/activate` and then run the script.
